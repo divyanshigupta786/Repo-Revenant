@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0B0E14" stroke="#293140" stroke-width="2"/>
+  <!-- Archival Box Outline -->
+  <path d="M16 22L32 14L48 22L32 30L16 22Z" stroke="#80D8FF" stroke-width="2" stroke-linejoin="round" fill="rgba(128,216,255,0.06)"/>
+  <path d="M16 22V42L32 50V30" stroke="#68F0D0" stroke-width="2" stroke-linejoin="round" fill="rgba(104,240,208,0.08)"/>
+  <path d="M48 22V42L32 50V30" stroke="#68F0D0" stroke-width="2" stroke-linejoin="round" fill="rgba(104,240,208,0.04)"/>
+  <!-- Central Resurrection Pulse Core -->
+  <circle cx="32" cy="30" r="4.5" fill="#68F0D0"/>
+  <circle cx="32" cy="30" r="8" stroke="#8CFFE3" stroke-width="1.5" stroke-dasharray="2 3"/>
+  <!-- Spectral Signal Nodes -->
+  <circle cx="16" cy="22" r="2" fill="#80D8FF"/>
+  <circle cx="48" cy="22" r="2" fill="#80D8FF"/>
+  <circle cx="32" cy="50" r="2" fill="#69D99A"/>
+</svg>

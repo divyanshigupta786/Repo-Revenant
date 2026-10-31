@@ -1,0 +1,117 @@
+# RepoRevenant: AI-Readable Architecture and Forensic Specification
+
+> "Forgotten code deserves a second life. Investigate the forgotten. Repair the broken. Prove the resurrection."
+
+RepoRevenant is an open-source, evidence-backed AI agent platform engineered to investigate, repair, and verify abandoned software repositories.
+
+---
+
+## 1. Product Identity & Purpose
+
+- **Product Name**: RepoRevenant
+- **Category**: Open-Source AI Software Investigation & Repository Repair Platform
+- **Tagline**: "Forgotten code deserves a second life."
+- **Supporting Tagline**: "Investigate the forgotten. Repair the broken. Prove the resurrection."
+- **Target Challenge**: "Ghost in the Machine" Open-Source AI Challenge
+- **Core Concept**: Software projects are abandoned due to bit rot, runtime evolution, PEP deprecations, and library drift. RepoRevenant combines deterministic Abstract Syntax Tree (AST) analysis, replaceable local open-weight AI models, human-approved patch workflows, and disposable sandbox test verification to restore software with empirical proof.
+
+---
+
+## 2. Epistemic Hierarchy (Facts vs Hypotheses vs Verified Proof)
+
+1. **Observed Facts**: Deterministic telemetry derived directly from Python AST parsing, file inventory, dependency manifest analyzers, and pytest discovery.
+2. **AI Hypotheses**: Contextual diagnostic hypotheses produced by local open-weight models (e.g. Llama 3, Mistral) explaining *why* software rotted (e.g. standard library module deprecations like PEP 594).
+3. **Proposed Repairs**: Sandboxed, targeted unified diff proposals linked to specific evidence identifiers and validated for AST syntax correctness.
+4. **Human-Approved Changes**: Granular developer approval gates. No patch is applied to a working tree without human review or explicit consent.
+5. **Executed Verification Checks**: Subprocess test suites executed in isolated sandbox directories with scrubbed environments, strict timeouts, and exit code capture.
+6. **Verified Outcomes**: Software is marked resurrected ONLY when the post-patch test suite exits with code 0 and all assertions pass.
+
+---
+
+## 3. Replaceable Open-Source AI Architecture
+
+- **Local Inference Support**: Direct integration with Ollama, vLLM, and local OpenAI-compatible runtimes.
+- **Supported Models**: Configurable open-weight models (`Llama-3-8B-RepoRevenant`, `mistral:7b`, `codellama:7b`, `deepseek-coder:6.7b`).
+- **Air-Gapped Forensic Mode**: Built-in deterministic expert engine capable of synthesizing valid patches for PEP 594 standard library deprecations and abstract collection drifts with zero external network or model calls.
+- **Provider Abstraction**: Decoupled engine allowing developers to plug in different inference endpoints through settings without modifying core forensics.
+
+---
+
+## 4. Privacy & Sandbox Security Principles
+
+- **Zero Data Egress by Default**: All source code AST analysis and sandbox verification execute locally on the host. Code is never uploaded to commercial cloud APIs unless explicitly configured.
+- **Environment Scrubbing**: Test subprocess execution environments are stripped of all API keys, access tokens, and sensitive system variables.
+- **Process Isolation & Timeouts**: Untrusted repository test runners execute within temporary directories with strict 30-second deadlines to prevent resource exhaustion or infinite loops.
+- **Path Traversal Protection**: Unified diffs and file previews enforce strict containment within the target workspace directory, rejecting directory traversal attempts (`..`).
+
+---
+
+## 5. Core API Endpoints
+
+- `GET /health` / `GET /api/health`: Service liveness, active open-weight model name, and backend telemetry.
+- `GET /api/ready`: Readiness probe verifying database connectivity and sandbox filesystem readiness.
+- `GET /api/models`: Model availability check, latency telemetry, and supported inference runtimes.
+- `GET /api/sample-repos`: Built-in abandoned repositories exhibiting real-world decay (e.g. PyVault, MatrixCalc).
+- `POST /api/investigations`: Start a new forensic investigation with a Git URL, sample key, or local path.
+- `GET /api/investigations/{id}`: Detailed investigation telemetry, forensic findings, unified diffs, and verification metrics.
+- `POST /api/investigations/{id}/cancel`: Cancel an active or queued investigation.
+- `GET /api/investigations/{id}/events`: Retrieve forensic timeline event list.
+- `GET /api/investigations/{id}/findings`: Retrieve deterministic AST findings for an investigation.
+- `GET /api/investigations/{id}/patches`: Retrieve AI-synthesized unified diff patch proposals.
+- `POST /api/investigations/{id}/patches/{patch_id}/approve`: Approve a specific patch proposal.
+- `POST /api/investigations/{id}/patches/{patch_id}/reject`: Reject a patch proposal and rollback changes.
+- `POST /api/investigations/{id}/patches/{patch_id}/verify`: Re-execute sandbox verification test suite.
+- `GET /api/investigations/{id}/files`: List workspace file tree with line counts, sizes, and linked finding counts.
+- `GET /api/investigations/{id}/files/content`: Retrieve bounded file content with inline AST findings annotations.
+- `GET /api/investigations/{id}/export/markdown`: Download complete evidence-backed Resurrection Report.
+- `GET /api/investigations/{id}/export/json`: Download machine-readable investigation telemetry.
+- `GET /api/investigations/{id}/export/patch`: Download standard Git-compatible unified patch file.
+- `GET /api/settings` & `POST /api/settings`: Read and update engine configuration.
+
+---
+
+## 6. Installation & Quickstart
+
+```bash
+# 1. Clone repository
+git clone https://github.com/example/reporevenant.git
+cd reporevenant
+
+# 2. Install Node.js frontend dependencies
+npm install
+
+# 3. Set up Python backend virtual environment
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# Linux/macOS:
+source .venv/bin/activate
+
+pip install -r backend/requirements.txt
+
+# 4. Start Python FastAPI backend (Port 8000)
+npm run backend
+
+# 5. In another terminal, start Next.js frontend (Port 3000)
+npm run dev
+
+# 6. Open application
+# Navigate to http://localhost:3000
+```
+
+---
+
+## 7. Contribution Guidelines
+
+- We welcome contributions under the **Apache-2.0 License**.
+- Add new AST deprecation detectors in `backend/app/engine/analyzer.py`.
+- Add new patch synthesis rules in `backend/app/engine/ai_agent.py`.
+- Run test suite prior to pull request: `python -m pytest backend/tests -v` and `npm run build`.
+
+---
+
+## 8. Canonical URLs
+
+- Landing Page: `https://reporevenant.dev/`
+- Investigation App: `https://reporevenant.dev/app`
+- LLM Architecture Specification: `https://reporevenant.dev/llms.txt`

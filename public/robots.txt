@@ -1,0 +1,11 @@
+# robots.txt for RepoRevenant
+# https://reporevenant.dev
+
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /app/investigations/
+
+# Sitemap location
+Sitemap: https://reporevenant.dev/sitemap.xml
